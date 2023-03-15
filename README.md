@@ -3,6 +3,7 @@
 </p>
 
 <p>Testing 2: comitting a file to trigger build.</p>
+<p>change2</p>
 ![Continuous Integration](https://github.com/GoogleCloudPlatform/microservices-demo/workflows/Continuous%20Integration%20-%20Main/Release/badge.svg)
 
 **Online Boutique** is a cloud-first microservices demo application.

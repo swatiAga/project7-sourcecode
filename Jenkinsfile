@@ -9,7 +9,7 @@ sonar-scanner -v
 sonar-scanner \\
   -Dsonar.projectKey=test \\
   -Dsonar.sources=.  \\
-  -Dsonar.host.url=http://3.110.192.225:9000 \\
+  -Dsonar.host.url=http://172.31.30.186:9000 \\
   -Dsonar.qualitygate.wait=true \\
   -Dsonar.qualitygate.timeout=300 \\
   -Dsonar.exclusions=src/adservice/src/main/java/hipstershop/*  \\

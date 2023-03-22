@@ -1,12 +1,9 @@
 pipeline {
   agent any
   stages {
-    stage('dockerbuild') {
+    stage('docker build') {
       steps {
-        withGradle() {
-          sh 'docker build'
-        }
-
+        sh 'docker build https://github.com/swatiAga/project7-sourcecode.git#test:docker'
       }
     }
 

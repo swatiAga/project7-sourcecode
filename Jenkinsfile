@@ -3,7 +3,10 @@ pipeline {
   stages {
     stage('dockerbuild') {
       steps {
-        echo 'I am testing'
+        withGradle() {
+          sh 'docker build'
+        }
+
       }
     }
 

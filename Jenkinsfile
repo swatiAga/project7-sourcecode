@@ -6,7 +6,6 @@ pipeline {
         sh '''export PATH="$PATH:/opt/sonar-scanner/bin"
 env | grep PATH
 sonar-scanner -v
-sonar-scanner -X 
 sonar-scanner \\
   -Dsonar.projectKey=test \\
   -Dsonar.sources=.  \\

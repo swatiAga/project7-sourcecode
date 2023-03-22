@@ -9,11 +9,6 @@ pipeline {
 
   stages {
 
-    stage('Checkout Source') {
-      steps {
-        git 'https://github.com/swatiAga/project7-sourcecode.git'
-      }
-    }
 
     stage('Build image') {
       steps{

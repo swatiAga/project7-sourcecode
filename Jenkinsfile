@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Create Docker Image') {
       steps {
-        sh './hack/make-release.sh'
+        sh 'echo "hello world"'
       }
     }
 

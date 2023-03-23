@@ -19,6 +19,8 @@
 # - 2. injecting tags into YAML manifests
 # - 3. creating a new git tag
 # - 4. pushing the tag/commit to main.
+export TAG="v0.1.0"
+export REPO_PREFIX=agarwalswati
 
 set -euo pipefail
 SCRIPTDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
@@ -48,18 +50,18 @@ git pull
 "${SCRIPTDIR}"/make-docker-images.sh
 
 # update yaml
-"${SCRIPTDIR}"/make-release-artifacts.sh
+#"${SCRIPTDIR}"/make-release-artifacts.sh
 
 # build and push images
-"${SCRIPTDIR}"/make-helm-chart.sh
+#"${SCRIPTDIR}"/make-helm-chart.sh
 
 # create git release / push to new branch
 git checkout -b "release/${TAG}"
 git add "${SCRIPTDIR}/../release/"
-git add "${SCRIPTDIR}/../kustomize/base/"
-git add "${SCRIPTDIR}/../helm-chart/"
+#git add "${SCRIPTDIR}/../kustomize/base/"
+#git add "${SCRIPTDIR}/../helm-chart/"
 git commit --allow-empty -m "Release $TAG"
-log "Pushing k8s manifests to release/${TAG}..."
+#log "Pushing k8s manifests to release/${TAG}..."
 git tag "$TAG"
 git push --set-upstream origin "release/${TAG}"
 git push --tags

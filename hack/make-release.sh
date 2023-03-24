@@ -43,11 +43,11 @@ if [[ $(git status -s | wc -l) -gt 0 ]]; then
 fi
 
 # make sure local source is up to date
-git checkout main
+git checkout test
 git pull
 
 # build and push images
-"${SCRIPTDIR}"/make-docker-images.sh
+"${SCRIPTDIR}"/hack/make-docker-images.sh
 
 # update yaml
 #"${SCRIPTDIR}"/make-release-artifacts.sh
@@ -57,7 +57,7 @@ git pull
 
 # create git release / push to new branch
 git checkout -b "release/${TAG}"
-git add "${SCRIPTDIR}/../release/"
+git add "${SCRIPTDIR}/release/"
 #git add "${SCRIPTDIR}/../kustomize/base/"
 #git add "${SCRIPTDIR}/../helm-chart/"
 git commit --allow-empty -m "Release $TAG"

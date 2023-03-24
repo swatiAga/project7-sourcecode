@@ -9,7 +9,7 @@ pipeline {
 
     stage('test') {
       steps {
-        sh 'echo credentials(\'dockerhubloginId\')'
+        sh '\'echo $DOCKERHUB_CREDENTIALS_PSW | sudo docker login -u agarwalswati --password-stdin\'  '
       }
     }
 

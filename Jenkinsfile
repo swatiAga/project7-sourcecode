@@ -1,9 +1,11 @@
 pipeline {
   agent any
   stages {
-    stage('test') {
+      stage('Deploying App to Kubernetes') {
       steps {
-        sh 'echo \'hello world\''
+        script {
+          kubernetesDeploy(configs: "/var/lib/jenkins/workspace/tShellScriptFileWithJenkins_test/release/kubernetes-manifests.yaml", kubeconfigId: "kubernetes")
+        }
       }
     }
 

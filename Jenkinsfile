@@ -9,7 +9,7 @@ pipeline {
 
     stage('test') {
       steps {
-        sh 'echo DOCKERHUB_CREDENTIALS'
+        sh 'echo $DOCKERHUB_CREDENTIALS.Username'
       }
     }
 

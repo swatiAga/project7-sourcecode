@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('use the sh file') {
       steps {
-        sh 'sh \'/var/lib/jenkins/workspace/tShellScriptFileWithJenkins_test/hack/make-release.sh\''
+        sh 'echo \'hello\''
       }
     }
 

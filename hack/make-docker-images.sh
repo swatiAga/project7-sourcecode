@@ -21,20 +21,27 @@ SCRIPTDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 log() { echo "$1" >&2; }
 
-TAG="${TAG:?TAG env variable must be specified}"
-REPO_PREFIX="${REPO_PREFIX:?REPO_PREFIX env variable must be specified}"
+#TAG="${TAG:?TAG env variable must be specified}"
+#REPO_PREFIX="${REPO_PREFIX:?REPO_PREFIX env variable must be specified}"
 
 while IFS= read -d $'\0' -r dir; do
+    echo pwd
     # build image
     svcname="$(basename "${dir}")"
+    echo svcname
     builddir="${dir}"
+    echo builddir
     #PR 516 moved cartservice build artifacts one level down to src
     if [ $svcname == "cartservice" ] 
     then
         builddir="${dir}/src"
     fi
+    echo $TAG
     image="${REPO_PREFIX}/$svcname:$TAG"
     (
+        #login to dockuer hub
+        sudo docker login --username=agarwalswati 
+
         cd "${builddir}"
         log "Building: ${image}"
         docker build --pull -t "${image}" .

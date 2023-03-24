@@ -24,23 +24,23 @@ export REPO_PREFIX=agarwalswati
 
 #set -euo pipefail
 SCRIPTDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-[[ -n "${DEBUG:-}" ]] && set -x
+#[[ -n "${DEBUG:-}" ]] && set -x
 
 log() { echo "$1" >&2; }
 fail() { log "$1"; exit 1; }
 
-TAG="${TAG:?TAG env variable must be specified}"
-REPO_PREFIX="${REPO_PREFIX:?REPO_PREFIX env variable must be specified e.g. gcr.io\/google-samples\/microservices-demo}"
+#TAG="${TAG:?TAG env variable must be specified}"
+#REPO_PREFIX="${REPO_PREFIX:?REPO_PREFIX env variable must be specified e.g. gcr.io\/google-samples\/microservices-demo}"
 
-if [[ "$TAG" != v* ]]; then
-    fail "\$TAG must start with 'v', e.g. v0.1.0 (got: $TAG)"
-fi
+#if [[ "$TAG" != v* ]]; then
+#    fail "\$TAG must start with 'v', e.g. v0.1.0 (got: $TAG)"
+#fi
 
 # ensure there are no uncommitted changes
-if [[ $(git status -s | wc -l) -gt 0 ]]; then
-    echo "error: can't have uncommitted changes"
-    exit 1
-fi
+#if [[ $(git status -s | wc -l) -gt 0 ]]; then
+#    echo "error: can't have uncommitted changes"
+#    exit 1
+#fi
 
 # make sure local source is up to date
 git checkout test

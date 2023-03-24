@@ -22,7 +22,7 @@
 export TAG="v0.1.0"
 export REPO_PREFIX=agarwalswati
 
-set -euo pipefail
+#set -euo pipefail
 SCRIPTDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 [[ -n "${DEBUG:-}" ]] && set -x
 

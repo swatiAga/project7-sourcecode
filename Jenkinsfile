@@ -9,15 +9,5 @@ pipeline {
 
       }
     }
-
-    stage('Deploying Istio scripts') {
-      steps {
-        script {
-          kubernetesDeploy(configs: "release/*istio-manifests.yaml", kubeconfigId: "kubernetes")
-        }
-
-      }
-    }
-
   }
 }

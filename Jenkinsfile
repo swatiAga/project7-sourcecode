@@ -6,7 +6,6 @@ pipeline {
         script {
           kubernetesDeploy(configs: "release/*.yml", kubeconfigId: "kubernetes")
         }
-
       }
     }
   }

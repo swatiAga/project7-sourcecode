@@ -17,7 +17,7 @@
 # ----------------------------------------------------------
 
 # [START servicemesh_release_istio_manifests_microservices_demo]
----
+
 apiVersion: networking.istio.io/v1alpha3
 kind: Gateway
 metadata:

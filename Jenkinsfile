@@ -12,7 +12,10 @@ pipeline {
 
     stage('Deploying Istio scripts') {
       steps {
-        sh 'kubectl apply -f release/*istio-manifests.yaml'
+        script {
+          kubernetesDeploy(configs: "release/*istio-manifests.yaml", kubeconfigId: "kubernetes")
+        }
+
       }
     }
 

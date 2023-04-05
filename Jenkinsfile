@@ -4,7 +4,7 @@ pipeline {
     stage('Deploying App to Kubernetes') {
       steps {
         script {
-          kubernetesDeploy(configs: "release/*.yml", kubeconfigId: "kubernetes")
+          sh 'kubectl apply -f release/*kubernetes-manifest.yml'
         }
       }
     }

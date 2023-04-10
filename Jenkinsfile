@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Quality Gate') {
       steps {
-        sh '''/opt/sonar-scanner/bin/sonar-scanner* \\
+        sh '''sonar-scanner* \\
   -Dsonar.projectKey=Project7 \\
   -Dsonar.sources=. \\
   -Dsonar.host.url=http://65.1.127.93:9000 \\

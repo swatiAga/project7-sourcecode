@@ -3,9 +3,9 @@ pipeline {
   stages {
     stage('Quality Gate') {
       steps {
-        sh '''sh \'\'\'sudo export PATH="$PATH:/opt/sonar-scanner/bin"
+        sh '''sh \'\'\'export PATH="$PATH:/opt/sonar-scanner/bin"
 
-sudo sonar-scanner \\
+sonar-scanner \\
   -Dsonar.projectKey=Project7 \\
   -Dsonar.sources=. \\
   -Dsonar.host.url=http://65.1.127.93:9000 \\

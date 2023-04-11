@@ -1,4 +1,4 @@
-<p align="center">
+<p align="left">
 <img src="src/frontend/static/icons/Hipster_HeroLogoMaroon.svg" width="300" alt="Online Boutique" />
 </p>
 <p>19March2023 -5 </p>

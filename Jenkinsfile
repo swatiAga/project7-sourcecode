@@ -12,7 +12,8 @@ pipeline {
 
     stage('Static Analysis') {
       steps {
-        sh '''/opt/sonar-scanner/bin/sonar-scanner \\
+        sh '''cd /opt/sonar-scanner/bin/
+        sonar-scanner \\
           -Dsonar.projectKey=Project7 \\
           -Dsonar.sources=. \\
           -Dsonar.host.url=http://13.235.255.168:9000 \\

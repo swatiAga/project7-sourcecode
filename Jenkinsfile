@@ -12,7 +12,8 @@ pipeline {
 
     stage('Static Analysis') {
       steps {
-        sh '''cd /opt/sonar-scanner/bin/
+        sh '''export PATH=$PATH:/opt/sonar-scanner/bin
+
         sonar-scanner \\
           -Dsonar.projectKey=Project7 \\
           -Dsonar.sources=. \\

@@ -12,9 +12,7 @@ pipeline {
 
     stage('Static Analysis') {
       steps {
-        sh '''export PATH="$PATH:/opt/sonar-scanner/bin"
-
-        sonar-scanner \\
+        sh '''/opt/sonar-scanner/bin/sonar-scanner \\
           -Dsonar.projectKey=Project7 \\
           -Dsonar.sources=. \\
           -Dsonar.host.url=http://13.235.255.168:9000 \\

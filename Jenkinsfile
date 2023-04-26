@@ -16,7 +16,8 @@ pipeline {
           -Dsonar.sources=. \\
           -Dsonar.exclusions=src/adservice/src/main/java/hipstershop/** \\
           -Dsonar.host.url=http://13.200.12.129:9000 \\
-          -Dsonar.login=sqp_4e7b4a89ef8158f6744ee9c8676f8008dff0a762 '''
+          -Dsonar.login=sqp_4e7b4a89ef8158f6744ee9c8676f8008dff0a762 \\
+          -Dsonar.qualitygate.wait=true'''
       }
     }
 

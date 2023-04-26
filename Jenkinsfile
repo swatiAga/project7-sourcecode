@@ -12,7 +12,7 @@ pipeline {
         sh '''export PATH=$PATH:/opt/sonar-scanner/bin
 
         sonar-scanner \\
-          -Dsonar.projectKey=Project7-23-April-Second \\
+          -Dsonar.projectKey=testproject23Apri2023 \\
           -Dsonar.sources=. \\
           -Dsonar.exclusions=src/adservice/src/main/java/hipstershop/** \\
           -Dsonar.host.url=http://3.110.116.139:9000 \\

@@ -12,7 +12,6 @@ pipeline {
         sh '''export PATH=$PATH:/opt/sonar-scanner/bin
 
         sonar-scanner \\
-          -Dsonar.qualitygate.wait=true \\
           -Dsonar.projectKey=Project7April262023 \\
           -Dsonar.sources=. \\
           -Dsonar.exclusions=src/adservice/src/main/java/hipstershop/** \\

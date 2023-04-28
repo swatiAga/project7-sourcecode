@@ -7,22 +7,22 @@ pipeline {
       }
     }
 
-    stage('Skaffold Build') {
+    stage('Syft SBOM') {
       
       steps {
-        sh '''pwd docker login -u agarwalswati -p dckr_pat__3TtkkQMmJfRLfZzdakx9x_jZEI
+        sh '''pwd docker login -u mohdkhalid -p dckr_pat__3TtkkQMmJfRLfZzdakx9x_jZEI
 
-syft packages agarwalswati/adservice:6d829bf  -o json  > adservice.json
-syft packages agarwalswati/currencyservice:6d829bf  -o json  > currencyservice.json
-syft packages agarwalswati/shippingservice:6d829bf  -o json  > shippingservice.json
-syft packages agarwalswati/frontend:6d829bf  -o json  > frontend.json
-syft packages agarwalswati/paymentservice:6d829bf  -o json  > paymentservice.json
-syft packages agarwalswati/cartservice:6d829bf  -o json  > cartservice.json
-syft packages agarwalswati/recommendationservice:6d829bf  -o json  > recommendationservice.json
-syft packages agarwalswati/productcatalogservice:6d829bf  -o json  > productcatalogservice.json
-syft packages agarwalswati/emailservice:6d829bf -o json  > emailservice.json
-syft packages agarwalswati/checkoutservice:6d829bf  -o json  > checkoutservice.json
-syft packages agarwalswati/loadgenerator:6d829bf  -o json  > loadgenerator.json
+syft packages mohdkhalid/adservice:04a0f4c  -o json  > adservice.json
+syft packages mohdkhalid/currencyservice:04a0f4c  -o json  > currencyservice.json
+syft packages mohdkhalid/shippingservice:04a0f4c  -o json  > shippingservice.json
+syft packages mohdkhalid/frontend:04a0f4c  -o json  > frontend.json
+syft packages mohdkhalid/paymentservice:04a0f4c  -o json  > paymentservice.json
+syft packages mohdkhalid/cartservice:04a0f4c  -o json  > cartservice.json
+syft packages mohdkhalid/recommendationservice:04a0f4c  -o json  > recommendationservice.json
+syft packages mohdkhalid/productcatalogservice:04a0f4c  -o json  > productcatalogservice.json
+syft packages mohdkhalid/emailservice:04a0f4c -o json  > emailservice.json
+syft packages mohdkhalid/checkoutservice:04a0f4c  -o json  > checkoutservice.json
+syft packages mohdkhalid/loadgenerator:04a0f4c  -o json  > loadgenerator.json
 
 syft packages dir:./ --scope all-layers -o json  > sbom-msdemo.json
 

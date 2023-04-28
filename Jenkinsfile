@@ -10,7 +10,7 @@ pipeline {
     stage('Syft SBOM') {
       
       steps {
-        sh '''pwd docker login -u mohdkhalid -p dckr_pat__3TtkkQMmJfRLfZzdakx9x_jZEI
+        sh '''pwd docker login -u mohdkhalid -p dckr_pat_K1C6BUyQ5rwcOxmHtiYAOa_wryo
 
 syft packages mohdkhalid/adservice:04a0f4c  -o json  > adservice.json
 syft packages mohdkhalid/currencyservice:04a0f4c  -o json  > currencyservice.json
